@@ -1,6 +1,4 @@
-Here’s a professional and well-structured `README.md` file for your portfolio. It provides an overview of your portfolio, its features, how to set it up, and how to use it.
 
----
 
 ```markdown
 # Jerzy Brian Cinense - Portfolio
