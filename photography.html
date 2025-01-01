@@ -4,70 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photography - Jerzy Brian Cinense</title>
-    <meta name="description" content="Portfolio of Jerzy Brian Cinense, showcasing photography projects.">
-    <meta name="keywords" content="Photography, Landscapes, Portraits, Event Photography">
-    <meta name="author" content="Jerzy Brian Cinense">
+    <meta name="description" content="Explore my photography portfolio, featuring landscapes, portraits, and event photography.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav>
         <div class="nav-container">
-            <div class="logo">Jerzy Brian</div>
+            <div class="logo"><a href="index.html">Jerzy Brian</a></div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About Me</a></li>
-                <li><a href="index.html#projects">Projects</a></li>
                 <li><a href="graphic-designs.html">Graphic Designs</a></li>
-                <li><a href="photography.html">Photography</a></li>
-                <li><a href="index.html#contact">Contact Me</a></li>
+                <li><a href="photography.html" class="active">Photography</a></li>
             </ul>
             <div class="hamburger">
                 <i class="fas fa-bars"></i>
             </div>
-            <button id="theme-toggle" class="btn">🌙</button>
         </div>
     </nav>
 
-    <!-- Photography Gallery -->
+    <!-- Photography Section -->
     <section id="photography">
         <div class="wave-divider"></div>
-        <h2 class="animate__animated animate__fadeIn">Photography</h2>
-        <div class="gallery animate__animated animate__fadeInUp" data-aos="fade-up">
+        <h2>Photography</h2>
+        <div class="gallery">
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80" alt="Photography 1">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Mountain Sunrise">
                 <div class="overlay">
-                    <h3>Landscape</h3>
-                    <p>Breathtaking view of a mountain range at sunrise.</p>
+                    <h3>Mountain Sunrise</h3>
+                    <p>A breathtaking view of the mountains at sunrise.</p>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Photography 2">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Urban Portrait">
                 <div class="overlay">
-                    <h3>Portrait</h3>
-                    <p>Close-up of a person with natural lighting.</p>
+                    <h3>Urban Portrait</h3>
+                    <p>A candid portrait of a young woman in an urban setting.</p>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80" alt="Photography 3">
+                <img src="https://images.unsplash.com/photo-1514525253160-7e1d2e5c3a1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Music Festival">
                 <div class="overlay">
-                    <h3>Event</h3>
-                    <p>Candid shots from a live music performance.</p>
+                    <h3>Music Festival</h3>
+                    <p>A vibrant shot from a music festival.</p>
                 </div>
             </div>
             <div class="gallery-item">
-                <img src="https://images.pexels.com/photos-3987066/pexels-photo-3987066.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Photography 4">
+                <img src="https://images.unsplash.com/photo-1496568816309-51d7c20e3b21?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="City Life">
                 <div class="overlay">
-                    <h3>Street</h3>
-                    <p>Everyday life captured in an urban setting.</p>
+                    <h3>City Life</h3>
+                    <p>A candid street photo capturing the hustle and bustle of city life.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Eagle in Flight">
+                <div class="overlay">
+                    <h3>Eagle in Flight</h3>
+                    <p>A stunning shot of an eagle soaring through the sky.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Dewdrops on Leaves">
+                <div class="overlay">
+                    <h3>Dewdrops on Leaves</h3>
+                    <p>A close-up shot of dewdrops on leaves.</p>
                 </div>
             </div>
         </div>
     </section>
+   
 
     <!-- Footer -->
     <footer>
@@ -75,9 +81,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
 </body>
 </html>

@@ -9,17 +9,20 @@
     <meta name="author" content="Jerzy Brian Cinense">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav>
         <div class="nav-container">
-            <div class="logo">Jerzy Brian</div>
+            <!-- Logo -->
+            <div class="logo">
+                <a href="#home">Jerzy Brian</a>
+            </div>
+    
+            <!-- Navigation Links -->
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
+                <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
@@ -30,16 +33,22 @@
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact Me</a></li>
             </ul>
-            <div class="hamburger">
+    
+            <!-- Hamburger Menu for Mobile -->
+            <div class="hamburger" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </div>
-            <button id="theme-toggle" class="btn">🌙</button>
+    
+            <!-- Theme Toggle Button -->
+            <button id="theme-toggle" class="btn" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i> <!-- Default icon for dark mode -->
+            </button>
         </div>
     </nav>
 
     <!-- Homepage Section -->
     <section id="home">
-        <div class="home-content animate__animated animate__fadeIn">
+        <div class="home-content">
             <h1>Welcome to My Portfolio</h1>
             <p>Hi, I'm Jerzy Brian G. Cinense, a recent graduate with expertise in IT Support, Digital Marketing, and Content Creation. Let's build something amazing together!</p>
             <div class="cta-buttons">
@@ -53,9 +62,9 @@
     <!-- About Me Section -->
     <section id="about">
         <div class="wave-divider"></div>
-        <h2 class="animate__animated animate__fadeIn">About Me</h2>
-        <div class="about-content animate__animated animate__fadeInUp" data-aos="fade-up">
-            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="About Me Image" class="about-image">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="About Me Image" class="about-image" loading="lazy">
             <p>
                 Motivated and detail-oriented recent graduate with strong technical skills in hardware and network troubleshooting, computer maintenance, and social media management. Proficient in Microsoft Office applications, adept at both independent work and team collaboration, with excellent communication skills and a high sense of responsibility.
             </p>
@@ -65,8 +74,8 @@
     <!-- Experience Section -->
     <section id="experience">
         <div class="wave-divider"></div>
-        <h2 class="animate__animated animate__fadeIn">Experience</h2>
-        <div class="timeline animate__animated animate__fadeInUp" data-aos="fade-up">
+        <h2>Experience</h2>
+        <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-icon">
                     <i class="fas fa-briefcase"></i>
@@ -104,9 +113,9 @@
     <!-- Education Section -->
     <section id="education">
         <div class="wave-divider"></div>
-        <h2 class="animate__animated animate__fadeIn">Education</h2>
-        <div class="education-content animate__animated animate__fadeInUp" data-aos="fade-up">
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="Education Image" class="education-image">
+        <h2>Education</h2>
+        <div class="education-content">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="Education Image" class="education-image" loading="lazy">
             <h3>Bachelor of Science in Information Technology</h3>
             <p>Ama Computer College-Pampanga</p>
         </div>
@@ -115,8 +124,8 @@
     <!-- Certifications Section -->
     <section id="certifications">
         <div class="wave-divider"></div>
-        <h2 class="animate__animated animate__fadeIn">Certifications</h2>
-        <div class="certifications-content animate__animated animate__fadeInUp" data-aos="fade-up">
+        <h2>Certifications</h2>
+        <div class="certifications-content">
             <!-- First 3 Certifications (Visible by Default) -->
             <div class="certification-card">
                 <h3>Essential Business English For Workplace Skills</h3>
@@ -171,88 +180,91 @@
         </div>
         <button id="view-more" class="btn">View More</button>
     </section>
-<!-- Skills Section -->
-<section id="skills">
-    <div class="wave-divider"></div>
-    <h2 class="animate__animated animate__fadeIn">Skills</h2>
-    <div class="skills-content animate__animated animate__fadeInUp" data-aos="fade-up">
-        <div class="skill-card">
-            <i class="fas fa-users"></i>
-            <h3>Social Media Management</h3>
-            <p>Expert in managing Instagram, Facebook, TikTok, Pinterest, and YouTube.</p>
-        </div>
-        <div class="skill-card">
-            <i class="fas fa-paint-brush"></i>
-            <h3>Content Creation</h3>
-            <p>Proficient in Canva, Adobe Photoshop, and Capcut for creating engaging content.</p>
-        </div>
-        <div class="skill-card">
-            <i class="fas fa-file-excel"></i>
-            <h3>Microsoft Office</h3>
-            <p>Skilled in Excel, Word, and PowerPoint for efficient task management.</p>
-        </div>
-    </div>
-</section>
-<!-- Projects Section -->
-<section id="projects">
-    <div class="wave-divider"></div>
-    <h2 class="animate__animated animate__fadeIn">Projects</h2>
-    <div class="projects-content animate__animated animate__fadeInUp" data-aos="fade-up">
-        <!-- Project 1 -->
-        <div class="project-card">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Job Application Tracker">
-            <h3>Job Application Tracker</h3>
-            <p>A web-based application that helps users manage their job applications, documents, and personal information.</p>
-            <a href="https://github.com/Pizza4sale/job" target="_blank" class="btn">View on GitHub</a>
-        </div>
 
-        <!-- Project 2 -->
-        <div class="project-card">
-            <img src="https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Tres Marias Cake and Pastries">
-            <h3>Tres Marias Cake and Pastries Web-based Management System</h3>
-            <p>A management system for Tres Marias Cake and Pastries, featuring customer accounts, order processing, and admin tools.</p>
-            <a href="https://github.com/Pizza4sale/TMCP" target="_blank" class="btn">View on GitHub</a>
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="wave-divider"></div>
+        <h2>Skills</h2>
+        <div class="skills-content">
+            <div class="skill-card">
+                <i class="fas fa-users"></i>
+                <h3>Social Media Management</h3>
+                <p>Expert in managing Instagram, Facebook, TikTok, Pinterest, and YouTube.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Content Creation</h3>
+                <p>Proficient in Canva, Adobe Photoshop, and Capcut for creating engaging content.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-file-excel"></i>
+                <h3>Microsoft Office</h3>
+                <p>Skilled in Excel, Word, and PowerPoint for efficient task management.</p>
+            </div>
         </div>
+    </section>
 
-        <!-- Project 3 -->
-        <div class="project-card">
-            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="Expense Tracker">
-            <h3>Expense Tracker</h3>
-            <p>A web application for managing and tracking expenses, with features for categorization and reporting.</p>
-            <a href="https://github.com/Pizza4sale/ETS" target="_blank" class="btn">View on GitHub</a>
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="wave-divider"></div>
+        <h2>Projects</h2>
+        <div class="projects-content">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Job Application Tracker" loading="lazy">
+                <h3>Job Application Tracker</h3>
+                <p>A web-based application that helps users manage their job applications, documents, and personal information.</p>
+                <a href="https://github.com/Pizza4sale/job" target="_blank" class="btn">View on GitHub</a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <img src="https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Tres Marias Cake and Pastries" loading="lazy">
+                <h3>Tres Marias Cake and Pastries Web-based Management System</h3>
+                <p>A management system for Tres Marias Cake and Pastries, featuring customer accounts, order processing, and admin tools.</p>
+                <a href="https://github.com/Pizza4sale/TMCP" target="_blank" class="btn">View on GitHub</a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="Expense Tracker" loading="lazy">
+                <h3>Expense Tracker</h3>
+                <p>A web application for managing and tracking expenses, with features for categorization and reporting.</p>
+                <a href="https://github.com/Pizza4sale/ETS" target="_blank" class="btn">View on GitHub</a>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card hidden">
+                <img src="https://images.pexels.com/photos/1591061/pexels-photo-1591061.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Barangay Milawid Official Website" loading="lazy">
+                <h3>Barangay Milawid Official Website</h3>
+                <p>An official website for Barangay Milawid, designed to help residents and officials manage documents and information.</p>
+                <a href="https://github.com/Pizza4sale/repo4" target="_blank" class="btn">View on GitHub</a>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card hidden">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80" alt="Graphic Designs" loading="lazy">
+                <h3>Graphic Designs</h3>
+                <p>A collection of creative graphic design projects, including logos, posters, and digital illustrations.</p>
+                <a href="graphic-designs.html" class="btn">View Portfolio</a>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="project-card hidden">
+                <img src="https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Photography" loading="lazy">
+                <h3>Photography</h3>
+                <p>A portfolio of my photography work, featuring landscapes, portraits, and event photography.</p>
+                <a href="photography.html" class="btn">View Portfolio</a>
+            </div>
         </div>
+        <button id="view-more-projects" class="btn">View More</button>
+    </section>
 
-        <!-- Project 4 -->
-        <div class="project-card hidden">
-            <img src="https://images.pexels.com/photos/1591061/pexels-photo-1591061.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Barangay Milawid Official Website">
-            <h3>Barangay Milawid Official Website</h3>
-            <p>An official website for Barangay Milawid, designed to help residents and officials manage documents and information.</p>
-            <a href="https://github.com/Pizza4sale/repo4" target="_blank" class="btn">View on GitHub</a>
-        </div>
-
-      <!-- Project 5 -->
-<div class="project-card hidden">
-    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80" alt="Graphic Designs">
-    <h3>Graphic Designs</h3>
-    <p>A collection of creative graphic design projects, including logos, posters, and digital illustrations.</p>
-    <a href="graphic-designs.html" class="btn">View Portfolio</a>
-</div>
-
-<!-- Project 6 -->
-<div class="project-card hidden">
-    <img src="https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Photography">
-    <h3>Photography</h3>
-    <p>A portfolio of my photography work, featuring landscapes, portraits, and event photography.</p>
-    <a href="photography.html" class="btn">View Portfolio</a>
-</div>
-    </div>
-    <button id="view-more-projects" class="btn">View More</button>
-</section>
     <!-- Testimonials Section -->
     <section id="testimonials">
         <div class="wave-divider"></div>
-        <h2 class="animate__animated animate__fadeIn">Testimonials</h2>
-        <div class="testimonials-content animate__animated animate__fadeInUp" data-aos="fade-up">
+        <h2>Testimonials</h2>
+        <div class="testimonials-content">
             <div class="testimonial-card">
                 <p>"Jerzy is a highly skilled professional with a great eye for detail. His work on our social media campaigns was exceptional!"</p>
                 <span>- John Doe, CEO of MyStory Inc.</span>
@@ -271,22 +283,22 @@
     <!-- Blog Section -->
     <section id="blog">
         <div class="wave-divider"></div>
-        <h2 class="animate__animated animate__fadeIn">Blog</h2>
-        <div class="blog-content animate__animated animate__fadeInUp" data-aos="fade-up">
+        <h2>Blog</h2>
+        <div class="blog-content">
             <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80" alt="Blog Image">
+                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80" alt="Blog Image" loading="lazy">
                 <h3>How to Optimize Social Media Content</h3>
                 <p>Learn the best practices for creating engaging social media content.</p>
                 <a href="#" class="btn">Read More</a>
             </div>
             <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Blog Image">
+                <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Blog Image" loading="lazy">
                 <h3>Top 5 Tools for Content Creation</h3>
                 <p>Discover the best tools for creating stunning visual content.</p>
                 <a href="#" class="btn">Read More</a>
             </div>
             <div class="blog-card">
-                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Blog Image">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Blog Image" loading="lazy">
                 <h3>Getting Started with IT Support</h3>
                 <p>A beginner's guide to starting a career in IT support.</p>
                 <a href="#" class="btn">Read More</a>
@@ -297,8 +309,8 @@
     <!-- Statistics Section -->
     <section id="statistics">
         <div class="wave-divider"></div>
-        <h2 class="animate__animated animate__fadeIn">Statistics</h2>
-        <div class="statistics-content animate__animated animate__fadeInUp" data-aos="fade-up">
+        <h2>Statistics</h2>
+        <div class="statistics-content">
             <div class="stat-card">
                 <i class="fas fa-project-diagram"></i>
                 <h3>10+</h3>
@@ -320,8 +332,8 @@
     <!-- Contact Me Section -->
     <section id="contact">
         <div class="wave-divider"></div>
-        <h2 class="animate__animated animate__fadeIn">Contact Me</h2>
-        <div class="contact-content animate__animated animate__fadeInUp" data-aos="fade-up">
+        <h2>Contact Me</h2>
+        <div class="contact-content">
             <form id="contactForm">
                 <input type="text" placeholder="Your Name" required>
                 <input type="email" placeholder="Your Email" required>
@@ -345,9 +357,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
 </body>
 </html>

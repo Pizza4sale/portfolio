@@ -59,7 +59,7 @@ portfolio/
 
 ## 🔗 Live Demo
 
-Check out the live version of my portfolio: [Portfolio Link](https://your-portfolio-url.com)
+Check out the live version of my portfolio: [Portfolio Link](https://pizza4sale.github.io/portfolio/)
 
 ## 📸 Screenshots
 
@@ -80,7 +80,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 If you have any questions or would like to collaborate, feel free to reach out:
 
-- **Email**: your.email@example.com
+- **Email**: jerzycinense2@gmail.com
 - **LinkedIn**: [Jerzy Brian Cinense](https://linkedin.com/in/jerzy-brian-c-772bb3171)
 - **GitHub**: [Pizza4sale](https://github.com/Pizza4sale)
 

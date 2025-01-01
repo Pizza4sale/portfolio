@@ -1,83 +1,132 @@
 // Smooth scrolling for navigation links
-document.querySelectorAll('nav ul li a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetSection = document.getElementById(targetId);
-        targetSection.scrollIntoView({ behavior: 'smooth' });
+function smoothScroll() {
+    document.querySelectorAll('nav ul li a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
     });
-});
+}
 
 // Highlight active section in navigation
-window.addEventListener('scroll', () => {
+function highlightActiveSection() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav ul li a');
 
-    sections.forEach((section, index) => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= 100 && rect.bottom >= 100) {
-            navLinks.forEach(link => link.classList.remove('active'));
-            navLinks[index].classList.add('active');
-        }
+    window.addEventListener('scroll', () => {
+        let currentSection = '';
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= 100 && rect.bottom >= 100) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').substring(1) === currentSection) {
+                link.classList.add('active');
+            }
+        });
     });
-});
+}
 
 // Hamburger menu for mobile
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
+function toggleHamburgerMenu() {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
 
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close Navbar on Link Click (for Mobile)
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    }
+}
 
 // Dark/Light Mode Toggle
-const toggle = document.getElementById('theme-toggle');
-toggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    toggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-});
+function toggleTheme() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            const isDarkMode = body.classList.contains('dark-theme');
+            themeToggle.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+        });
+
+        // Load Saved Theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.classList.add('dark-theme');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+    }
+}
 
 // Scroll-to-Top Button
-const scrollToTopButton = document.getElementById('scrollToTop');
+function scrollToTop() {
+    const scrollToTopButton = document.getElementById('scrollToTop');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        scrollToTopButton.style.display = 'block';
-    } else {
-        scrollToTopButton.style.display = 'none';
+    if (scrollToTopButton) {
+        window.addEventListener('scroll', () => {
+            scrollToTopButton.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+
+        scrollToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     }
-});
-
-scrollToTopButton.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// Loading Animation
-window.addEventListener('load', () => {
-    document.getElementById('loading').style.display = 'none';
-});
+}
 
 // Toggle "View More" for Certifications
-const viewMoreButton = document.getElementById('view-more');
-const hiddenCertifications = document.querySelectorAll('.certification-card.hidden');
+function toggleViewMoreCertifications() {
+    const viewMoreButton = document.getElementById('view-more');
+    const hiddenCertifications = document.querySelectorAll('.certification-card.hidden');
 
-viewMoreButton.addEventListener('click', () => {
-    hiddenCertifications.forEach(cert => {
-        cert.classList.toggle('hidden');
-    });
-
-    // Change button text based on visibility
-    if (viewMoreButton.textContent === 'View More') {
-        viewMoreButton.textContent = 'View Less';
-    } else {
-        viewMoreButton.textContent = 'View More';
+    if (viewMoreButton && hiddenCertifications.length > 0) {
+        viewMoreButton.addEventListener('click', () => {
+            hiddenCertifications.forEach(cert => cert.classList.toggle('hidden'));
+            viewMoreButton.textContent = viewMoreButton.textContent === 'View More' ? 'View Less' : 'View More';
+        });
     }
-});
+}
 
-document.getElementById('view-more-projects').addEventListener('click', function() {
+// Toggle "View More" for Projects
+function toggleViewMoreProjects() {
+    const viewMoreButton = document.getElementById('view-more-projects');
     const hiddenProjects = document.querySelectorAll('.project-card.hidden');
-    hiddenProjects.forEach(project => project.classList.remove('hidden'));
 
-    // Hide the "View More" button after all projects are shown
-    this.style.display = 'none';
-});
+    if (viewMoreButton && hiddenProjects.length > 0) {
+        viewMoreButton.addEventListener('click', () => {
+            hiddenProjects.forEach(project => project.classList.remove('hidden'));
+            viewMoreButton.style.display = 'none'; // Hide the button after showing all projects
+        });
+    }
+}
+
+// Initialize all functions
+function init() {
+    smoothScroll();
+    highlightActiveSection();
+    toggleHamburgerMenu();
+    toggleTheme();
+    scrollToTop();
+    toggleViewMoreCertifications();
+    toggleViewMoreProjects();
+}
+
+// Run initialization on DOM load
+document.addEventListener('DOMContentLoaded', init);
