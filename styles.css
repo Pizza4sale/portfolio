@@ -23,9 +23,24 @@ body {
     transition: var(--transition);
 }
 
+/* Dark Mode Styles */
 .dark-mode {
     background: var(--background-dark);
     color: #fff;
+}
+
+.dark-mode nav {
+    background: var(--nav-bg-dark);
+}
+
+.dark-mode .timeline-content,
+.dark-mode .certification-card,
+.dark-mode .skill-card,
+.dark-mode .project-card,
+.dark-mode .testimonial-card,
+.dark-mode .blog-card,
+.dark-mode .stat-card {
+    background: var(--card-bg-dark);
 }
 
 a {

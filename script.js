@@ -61,8 +61,8 @@ function toggleTheme() {
 
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-theme');
-            const isDarkMode = body.classList.contains('dark-theme');
+            body.classList.toggle('dark-mode'); // Use 'dark-mode' instead of 'dark-theme'
+            const isDarkMode = body.classList.contains('dark-mode');
             themeToggle.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
             localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
         });
@@ -70,7 +70,7 @@ function toggleTheme() {
         // Load Saved Theme
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
-            body.classList.add('dark-theme');
+            body.classList.add('dark-mode');
             themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
         }
     }
