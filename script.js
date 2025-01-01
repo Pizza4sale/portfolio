@@ -12,12 +12,21 @@ function smoothScroll() {
     });
 }
 
+// Debounce function for scroll events
+function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
+
 // Highlight active section in navigation
 function highlightActiveSection() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav ul li a');
 
-    window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', debounce(() => {
         let currentSection = '';
         sections.forEach(section => {
             const rect = section.getBoundingClientRect();
@@ -32,7 +41,7 @@ function highlightActiveSection() {
                 link.classList.add('active');
             }
         });
-    });
+    }, 100)); // Adjust the wait time as needed
 }
 
 // Hamburger menu for mobile
@@ -117,12 +126,38 @@ function toggleViewMoreProjects() {
     }
 }
 
+// Lightbox functionality
+function initLightbox() {
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+    const lightbox = document.createElement('div');
+    lightbox.id = 'lightbox';
+    document.body.appendChild(lightbox);
+
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            lightbox.classList.add('active');
+            const img = document.createElement('img');
+            img.src = item.src;
+            img.alt = item.alt;
+            while (lightbox.firstChild) {
+                lightbox.removeChild(lightbox.firstChild);
+            }
+            lightbox.appendChild(img);
+        });
+    });
+
+    lightbox.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+    });
+}
+
 // Initialize all functions
 function init() {
     smoothScroll();
     highlightActiveSection();
     toggleHamburgerMenu();
     toggleTheme();
+    initLightbox();
     scrollToTop();
     toggleViewMoreCertifications();
     toggleViewMoreProjects();
